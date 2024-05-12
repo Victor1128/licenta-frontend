@@ -38,7 +38,7 @@ const LandingPage = () => {
   return (
     <main>
       <h2>Introduceți titlul unui articol</h2>
-      <input
+      <textarea
         type="text"
         id="title"
         value={title}
@@ -48,8 +48,8 @@ const LandingPage = () => {
       {response && (
         <div>
           <h3>Rezultat</h3>
-          <p>Non-satira: {response[0]}</p>
-          <p>Satira: {response[1]}</p>
+          <p>Non-satira: {Math.round(response[0] * 100)}%</p>
+          <p>Satira: {Math.round(response[1] * 100)}%</p>
         </div>
       )}
       {error && <p>{error}</p>}
