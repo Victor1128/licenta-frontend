@@ -32,7 +32,7 @@ const LandingPage = () => {
   };
 
   useEffect(() => {
-    setError(null);
+    setError(null); 
   }, [error]);
 
   return (
