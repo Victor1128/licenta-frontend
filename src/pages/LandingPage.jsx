@@ -31,6 +31,7 @@ const LandingPage = () => {
     }
   };
 
+  
   useEffect(() => {
     setError(null); 
   }, [error]);
