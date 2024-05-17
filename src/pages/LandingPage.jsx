@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import apiURL from "../config.js";
+
 const LandingPage = () => {
   const [title, setTitle] = useState("");
   const [response, setResponse] = useState(null);
@@ -14,7 +16,7 @@ const LandingPage = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/predict`,
+        apiURL + "/predict",
         requestBody
       );
       setResponse(response.data.predictions[0]);
