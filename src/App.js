@@ -8,11 +8,13 @@ import Nav from "./components/Nav";
 function App() {
   return (
     <BrowserRouter>
-      <Nav />
-      <Routes>
-        <Route index element={<Predictions />} />
-        <Route path="concept" element={<Concept />} />
-      </Routes>
+      <div className="App">
+        <Nav />
+        <Routes>
+          <Route index element={<Predictions />} />
+          <Route path="concept" element={<Concept />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

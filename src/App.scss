@@ -1,3 +1,4 @@
+@import "./colors";
 .App {
   display: flex;
   height: 100vh;
@@ -5,5 +6,5 @@
   padding-top: 3vh;
   padding-bottom: 3vh;
   padding-left: 0.75vw;
-  background-color: #fcf4ff;
-}/*# sourceMappingURL=App.css.map */
+  background-color: $background_light;
+}
