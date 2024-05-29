@@ -6,4 +6,7 @@
   padding-bottom: 3vh;
   padding-left: 0.75vw;
   background-color: #fcf4ff;
+}
+.App * {
+  font-family: sans-serif;
 }/*# sourceMappingURL=App.css.map */
