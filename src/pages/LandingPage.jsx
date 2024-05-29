@@ -6,6 +6,7 @@ import config from "../config.js";
 const LandingPage = () => {
   const apiURL = config.apiURL;
   const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
 
@@ -13,6 +14,7 @@ const LandingPage = () => {
     e.preventDefault();
     const requestBody = {
       title: title,
+      content: content,
     };
 
     try {
@@ -31,20 +33,28 @@ const LandingPage = () => {
     }
   };
 
-  
-
   useEffect(() => {
-    setError(null); 
+    setError(null);
   }, [error]);
 
   return (
     <main>
-      <h2>Introduceți titlul unui articol</h2>
+      <h2>Introduceți un articol</h2>
+      <label htmlFor="title">Titlu</label>
       <textarea
         type="text"
         id="title"
+        name="title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+      />
+      <label htmlFor="content">Conținut</label>
+      <textarea
+        type="text"
+        id="content"
+        name="content"
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
       />
       <button onClick={handleSubmit}>Caută</button>
       {response && (
