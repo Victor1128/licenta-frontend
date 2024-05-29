@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import config from "../../config.js";
+import "./Predictions.css";
 
 const LandingPage = () => {
   const apiURL = config.apiURL;
@@ -40,23 +41,25 @@ const LandingPage = () => {
   return (
     <main>
       <h2>Introduceți un articol</h2>
-      <label htmlFor="title">Titlu</label>
-      <textarea
-        type="text"
-        id="title"
-        name="title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <label htmlFor="content">Conținut</label>
-      <textarea
-        type="text"
-        id="content"
-        name="content"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-      />
-      <button onClick={handleSubmit}>Caută</button>
+      <div className="inputs">
+        <textarea
+          type="text"
+          id="title"
+          name="title"
+          value={title}
+          placeholder="Titlu"
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <textarea
+          type="text"
+          id="content"
+          name="content"
+          value={content}
+          placeholder="Conținut"
+          onChange={(e) => setContent(e.target.value)}
+        />
+        <button onClick={handleSubmit}>Caută</button>
+      </div>
       {response && (
         <div>
           <h3>Rezultat</h3>

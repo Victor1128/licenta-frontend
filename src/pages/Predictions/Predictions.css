@@ -1,0 +1,29 @@
+main {
+  flex: 1 1 auto;
+  height: 100%;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+main .inputs {
+  margin-top: 30px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .inputs textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid rgba(0, 0, 0, 0.1254901961);
+  border-radius: 10px;
+  padding: 15px;
+  font-size: larger;
+  height: 3.2em;
+}
+main .inputs textarea#content {
+  height: 75%;
+}/*# sourceMappingURL=Predictions.css.map */
