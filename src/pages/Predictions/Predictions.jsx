@@ -9,10 +9,20 @@ const LandingPage = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [response, setResponse] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (title.length + content.length > 1000) {
+      setError("Ați depășit limita de 1000 de caractere");
+      console.log("eroare1");
+      return;
+    }
+    if (title.length + content.length == 0) {
+      setError("Cel puțin unul dintre câmpuri trebuie completat");
+      console.log("eroare2");
+      return;
+    }
     const requestBody = {
       title: title,
       content: content,
@@ -36,11 +46,12 @@ const LandingPage = () => {
 
   useEffect(() => {
     setError(null);
-  }, [error]);
+  }, [title, content]);
 
   return (
     <main>
       <h2>Introduceți un articol</h2>
+      {error && <p className="error">{error}</p>}
       <div className="inputs">
         <textarea
           type="text"
@@ -48,17 +59,26 @@ const LandingPage = () => {
           name="title"
           value={title}
           placeholder="Titlu"
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => setTitle(e.target.value.trim())}
         />
-        <textarea
-          type="text"
-          id="content"
-          name="content"
-          value={content}
-          placeholder="Conținut"
-          onChange={(e) => setContent(e.target.value)}
-        />
-        <button onClick={handleSubmit}>Caută</button>
+        <div className="content">
+          <textarea
+            type="text"
+            id="content"
+            name="content"
+            value={content}
+            placeholder="Conținut"
+            onChange={(e) => setContent(e.target.value.trim())}
+          />
+          <p
+            style={{
+              color: title.length + content.length > 1000 ? "#bb2124" : "black",
+            }}
+          >
+            {title.length + content.length}/1000
+          </p>
+        </div>
+        <button onClick={handleSubmit}>Calculează</button>
       </div>
       {response && (
         <div>
@@ -67,7 +87,6 @@ const LandingPage = () => {
           <p>Satira: {Math.round(response[1] * 100)}%</p>
         </div>
       )}
-      {error && <p>{error}</p>}
     </main>
   );
 };

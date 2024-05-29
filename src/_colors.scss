@@ -1,3 +1,8 @@
 $dark_blue: #0d0c1e;
 $background_light: #fcf4ff;
 $violet: #6d62ed;
+$danger: #bb2124;
+
+.error {
+  color: $danger;
+}

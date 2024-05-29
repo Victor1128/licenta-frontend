@@ -1,3 +1,7 @@
+.error {
+  color: #bb2124;
+}
+
 .App {
   display: flex;
   height: 100vh;
