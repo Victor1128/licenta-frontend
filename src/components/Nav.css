@@ -1,3 +1,17 @@
+.burger {
+  display: none;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+.burger * {
+  width: 100%;
+  height: 100%;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -9,6 +23,16 @@
   gap: 100px;
   padding-top: 2%;
   margin-right: 50px;
+  position: relative;
+}
+.menu .close-button {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: xx-large;
+  cursor: pointer;
+  color: #fcf4ff;
 }
 .menu .logo {
   width: 40%;
@@ -38,4 +62,28 @@
 }
 .menu a:hover {
   background-color: #6d62ed;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .menu.show-menu-false {
+    display: none;
+  }
+  .menu.show-menu-true {
+    display: flex;
+    width: 60vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+  }
+  .menu.show-menu-true .close-button {
+    display: block;
+  }
+  .burger {
+    display: block;
+  }
 }/*# sourceMappingURL=Nav.css.map */
