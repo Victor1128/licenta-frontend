@@ -1,7 +1,3 @@
-.error {
-  color: #bb2124;
-}
-
 main {
   flex: 1 1 auto;
   height: 100%;
@@ -17,20 +13,20 @@ main .inputs {
   width: 100%;
   height: 70%;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 30px;
 }
 main .inputs .content {
   width: 100%;
-  height: 75%;
+  flex: 1 1 auto;
 }
 main .inputs textarea {
   width: 100%;
   resize: none;
-  border: 1px solid rgba(0, 0, 0, 0.1254901961);
+  border: 1px solid #e9e9e9;
   border-radius: 10px;
   padding: 15px;
   font-size: larger;
-  height: 3.2em;
+  overflow: hidden;
 }
 main .inputs textarea#content {
   height: 100%;
@@ -43,4 +39,67 @@ main .inputs button {
   color: white;
   border: none;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.predictions {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5647058824);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.predictions .predictions-window {
+  width: 60%;
+  height: 55%;
+  background-color: #fcf4ff;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid #e9e9e9;
+}
+.predictions .predictions-window .close-button {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: xx-large;
+  cursor: pointer;
+}
+.predictions .predictions-window :nth-child(2) .rectangle {
+  background-color: #be95c4;
+}
+.predictions .predictions-window :nth-child(3) .rectangle {
+  background-color: #5e548e;
+}
+.predictions .predictions-window .statistics {
+  width: 86%;
+  height: 40%;
+  border: 1px solid #e9e9e9;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 21px;
+}
+.predictions .predictions-window .statistics .percentage {
+  width: 100%;
+  height: 62%;
+  display: flex;
+  align-items: center;
+}
+.predictions .predictions-window .statistics .percentage .percent-text {
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: x-large;
+}
+.predictions .predictions-window .statistics .percentage .rectangle-container {
+  flex: 1 1 auto;
+  height: 100%;
+}
+.predictions .predictions-window .statistics .percentage .rectangle-container .rectangle {
+  height: 100%;
 }/*# sourceMappingURL=Predictions.css.map */
