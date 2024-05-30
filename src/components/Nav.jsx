@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./Nav.css";
 
 const Nav = () => {
   const [showMenu, setShowMenu] = useState(false);
   const catMenu = useRef(null);
+  const navigator = useNavigate();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -19,6 +21,12 @@ const Nav = () => {
       setShowMenu(false);
     }
   };
+
+  const handleNavigate = (route) => {
+    setShowMenu(false);
+    navigator(route);
+  };
+
   document.addEventListener("mousedown", closeOpenMenus);
 
   return (
@@ -37,8 +45,12 @@ const Nav = () => {
         </div>
         <div className="logo"></div>
         <nav className="routes-container">
-          <Link to="/">Detector de satiră</Link>
-          <Link to="concept">Concept</Link>
+          <div className="link" to="/" onClick={() => handleNavigate("/")}>
+            Detector de satiră
+          </div>
+          <div className="link" onClick={() => handleNavigate("concept")}>
+            Concept
+          </div>
         </nav>
       </div>
     </>

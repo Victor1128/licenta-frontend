@@ -52,7 +52,7 @@
     padding: 15px;
   }
 
-  a {
+  .link {
     text-decoration: none;
     color: white;
     font-size: 22px;
@@ -62,8 +62,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%;
+    cursor: pointer;
   }
-  a:hover {
+  .link:hover {
     background-color: $violet;
   }
 }
