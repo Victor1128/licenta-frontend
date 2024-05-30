@@ -115,3 +115,12 @@ main {
     }
   }
 }
+
+@media (max-width: 768px) {
+  .predictions {
+    justify-content: flex-start;
+    .predictions-window {
+      width: 90%;
+    }
+  }
+}
