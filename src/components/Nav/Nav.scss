@@ -4,7 +4,7 @@
   display: none;
   width: 25px;
   height: 25px;
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
   cursor: pointer;
@@ -36,10 +36,13 @@
     color: $background_light;
   }
   .logo {
-    width: 40%;
+    cursor: pointer;
+    font-size: 2vw;
+    color: white;
     background-color: #363079;
-    padding: 30%;
-    border-radius: 36%;
+    // padding: 0.6vw 1.1vw;
+    padding: 9px 17px;
+    border-radius: 57px;
   }
 
   nav {
@@ -77,7 +80,7 @@
   padding: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .menu {
     display: none; // Hide the entire menu on mobile view by default
     &.show-menu-false {
@@ -95,6 +98,9 @@
       .close-button {
         display: block;
       }
+    }
+    .logo {
+      font-size: xx-large;
     }
   }
   .burger {

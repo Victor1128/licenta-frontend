@@ -2,7 +2,7 @@
   display: none;
   width: 25px;
   height: 25px;
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
   cursor: pointer;
@@ -35,10 +35,12 @@
   color: #fcf4ff;
 }
 .menu .logo {
-  width: 40%;
+  cursor: pointer;
+  font-size: 2vw;
+  color: white;
   background-color: #363079;
-  padding: 30%;
-  border-radius: 36%;
+  padding: 9px 17px;
+  border-radius: 57px;
 }
 .menu nav {
   display: flex;
@@ -73,7 +75,7 @@
   padding: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .menu {
     display: none;
   }
@@ -92,6 +94,9 @@
   }
   .menu.show-menu-true .close-button {
     display: block;
+  }
+  .menu .logo {
+    font-size: xx-large;
   }
   .burger {
     display: block;

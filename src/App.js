@@ -13,8 +13,9 @@ function App() {
       <div className="App">
         <Nav />
         <Routes>
+          <Route index element={<News itemsPerPage={10} />} />
           <Route path="stiri" element={<News itemsPerPage={10} />} />
-          <Route index element={<Predictions />} />
+          <Route path="clasificare" element={<Predictions />} />
           <Route path="concept" element={<Concept />} />
         </Routes>
       </div>

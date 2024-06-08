@@ -45,12 +45,14 @@ const Nav = () => {
         <div onClick={() => setShowMenu(false)} className="close-button">
           X
         </div>
-        <div className="logo"></div>
+        <div className="logo" onClick={() => handleNavigate("/")}>
+          eSatiră
+        </div>
         <nav className="routes-container">
           <div className="link" onClick={() => handleNavigate("/stiri")}>
             Ultimele știri
           </div>
-          <div className="link" to="/" onClick={() => handleNavigate("/")}>
+          <div className="link" onClick={() => handleNavigate("/clasificare")}>
             Detector de satiră
           </div>
           <div className="link" onClick={() => handleNavigate("concept")}>
