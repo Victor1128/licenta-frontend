@@ -4,8 +4,10 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 
 import config from "../../config.js";
-import "./News.css";
 import Statistics from "../../components/Statistics.jsx";
+
+import "./News.css";
+import "../../pagination.css";
 
 const News = ({ itemsPerPage }) => {
   const apiURL = config.apiURL;
@@ -99,11 +101,12 @@ const News = ({ itemsPerPage }) => {
       <NewsItems currentItems={currentItems} />
       <ReactPaginate
         breakLabel="..."
-        nextLabel="înainte >"
+        nextLabel=">"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={1}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={2}
         pageCount={pageCount}
-        previousLabel="< înapoi"
+        previousLabel="<"
         renderOnZeroPageCount={null}
       />
     </main>
