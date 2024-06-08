@@ -13,17 +13,17 @@
 }
 
 .menu {
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 13vw;
-  height: 100%;
+  height: 94vh;
   border-radius: 1.4vw;
   background-color: #0d0c1e;
   gap: 100px;
   padding-top: 2%;
   margin-right: 50px;
-  position: relative;
 }
 .menu .close-button {
   display: none;
@@ -63,6 +63,14 @@
 }
 .menu .link:hover {
   background-color: #6d62ed;
+}
+
+.fake-menu {
+  position: relative;
+  height: 0;
+  margin: 0;
+  margin-right: 50px;
+  padding: 0;
 }
 
 @media (max-width: 768px) {

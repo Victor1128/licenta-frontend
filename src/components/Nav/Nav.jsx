@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
@@ -37,6 +36,9 @@ const Nav = () => {
         </div>
       )}
       <div
+        className={`menu fake-menu show-menu-${showMenu ? "true" : "false"}`}
+      />
+      <div
         ref={catMenu}
         className={`menu show-menu-${showMenu ? "true" : "false"}`}
       >
@@ -45,6 +47,9 @@ const Nav = () => {
         </div>
         <div className="logo"></div>
         <nav className="routes-container">
+          <div className="link" onClick={() => handleNavigate("/stiri")}>
+            Ultimele știri
+          </div>
           <div className="link" to="/" onClick={() => handleNavigate("/")}>
             Detector de satiră
           </div>

@@ -3,6 +3,8 @@ import axios from "axios";
 
 import config from "../../config.js";
 import "./Predictions.css";
+import PercentRectangle from "../../components/PercentRectangle.jsx";
+import Statistics from "../../components/Statistics.jsx";
 
 const LandingPage = () => {
   const apiURL = config.apiURL;
@@ -78,7 +80,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <main>
+      <main className="predictions-main">
         <h2>Introduceți un articol</h2>
         {error && <p className="error">{error}</p>}
         <div className="inputs">
@@ -125,30 +127,8 @@ const LandingPage = () => {
             >
               X
             </div>
-            <div className="statistics">
-              <h3>Non-satiră</h3>
-              <div className="percentage">
-                <p className="percent-text">{response[0]}%</p>
-                <div className="rectangle-container">
-                  <div
-                    style={{ width: `${response[0]}%` }}
-                    className="rectangle"
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div className="statistics">
-              <h3>Satiră</h3>
-              <div className="percentage">
-                <p className="percent-text">{response[1]}%</p>
-                <div className="rectangle-container">
-                  <div
-                    style={{ width: `${response[1]}%` }}
-                    className="rectangle"
-                  ></div>
-                </div>
-              </div>
-            </div>
+            <Statistics text="Non-satiră" percent={response[0]} />
+            <Statistics text="Satiră" percent={response[1]} />
           </div>
         </div>
       )}

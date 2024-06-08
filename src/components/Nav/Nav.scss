@@ -1,4 +1,4 @@
-@import "../colors";
+@import "../../colors";
 
 .burger {
   display: none;
@@ -15,17 +15,17 @@
 }
 
 .menu {
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 13vw;
-  height: 100%;
+  height: 94vh;
   border-radius: 1.4vw;
   background-color: $dark_blue;
   gap: 100px;
   padding-top: 2%;
   margin-right: 50px;
-  position: relative;
   .close-button {
     display: none;
     position: absolute;
@@ -67,6 +67,14 @@
   .link:hover {
     background-color: $violet;
   }
+}
+
+.fake-menu {
+  position: relative;
+  height: 0;
+  margin: 0;
+  margin-right: 50px;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
