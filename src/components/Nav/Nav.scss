@@ -95,12 +95,19 @@
       top: 0;
       border-radius: 0;
       z-index: 10;
+      padding-top: 60px;
       .close-button {
         display: block;
       }
     }
     .logo {
       font-size: xx-large;
+    }
+    .link {
+      text-align: left;
+    }
+    nav {
+      gap: 20px;
     }
   }
   .burger {

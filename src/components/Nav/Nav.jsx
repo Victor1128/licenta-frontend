@@ -43,7 +43,7 @@ const Nav = () => {
         className={`menu show-menu-${showMenu ? "true" : "false"}`}
       >
         <div onClick={() => setShowMenu(false)} className="close-button">
-          X
+          <span>&times;</span>
         </div>
         <div className="logo" onClick={() => handleNavigate("/")}>
           eSatiră

@@ -125,7 +125,7 @@ const LandingPage = () => {
               onClick={() => setShowPredictions(false)}
               className="close-button"
             >
-              X
+              <span>&times;</span>
             </div>
             <Statistics text="Non-satiră" percent={response[0]} />
             <Statistics text="Satiră" percent={response[1]} />
